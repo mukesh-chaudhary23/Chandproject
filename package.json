@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mukesh-chaudhary23/Chandproject#readme",
   "dependencies": {
+    "body-parser": "^2.2.0",
     "ejs": "^3.1.10",
     "expess": "^0.0.1-security",
     "express": "^5.1.0"

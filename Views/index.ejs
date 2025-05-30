@@ -2,12 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Order Delicious Pizza!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; background: #fff8f0; margin: 0; padding: 0; }
+        .container { max-width: 500px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px #ccc; padding: 30px; }
+        h1 { color: #d35400; text-align: center; }
+        img { display: block; margin: 0 auto 20px; width: 220px; border-radius: 10px; }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        label { font-weight: bold; }
+        input, select { padding: 8px; border-radius: 5px; border: 1px solid #ccc; }
+        button { background: #e67e22; color: #fff; border: none; padding: 12px; border-radius: 5px; font-size: 1rem; cursor: pointer; }
+        button:hover { background: #d35400; }
+    </style>
 </head>
 <body>
-    <h1> This is my Ejs Page  which i want to host</h1>
-    <h2> <%= title %></h2>
-    <h2> <%= message %></h2>
+    <div class="container">
+        <h1>Order Your Pizza!</h1>
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Delicious Pizza">
+        <form action="/order" method="POST">
+            <label for="size">Choose Size:</label>
+            <select id="size" name="size" required>
+                <option value="">Select size</option>
+                <option value="small">Small - $8</option>
+                <option value="medium">Medium - $12</option>
+                <option value="large">Large - $16</option>
+            </select>
+
+            <label for="toppings">Toppings:</label>
+            <input type="text" id="toppings" name="toppings" placeholder="e.g. Pepperoni, Mushrooms">
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Delivery Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <button type="submit">Order Now</button>
+        </form>
+    </div>
 </body>
 </html>
